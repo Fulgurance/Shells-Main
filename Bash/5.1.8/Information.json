@@ -16,5 +16,18 @@
       "options": []
     }
   ],
-  "options": []
+  "options": [
+    {
+      "name": "Pass1",
+      "description": "Enable the phase 1 of the cross toolchain building",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Ncurses",
+          "version": "6.2.0",
+          "options": ["Pass1"]
+        }
+      ]
+    }
+  ]
 }
