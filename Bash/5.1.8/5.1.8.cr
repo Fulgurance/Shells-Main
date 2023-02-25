@@ -28,9 +28,13 @@ class Target < ISM::Software
         super
 
         makeSource([Ism.settings.makeOptions,"DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+    end
+
+    def install
+        super
+
         if option("Pass1")
-            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}bin")
-            makeLink("bash","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}bin/sh",:symbolicLink)
+            makeLink("bash","#{Ism.settings.rootPath}bin/sh",:symbolicLink)
         end
     end
 
