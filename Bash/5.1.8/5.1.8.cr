@@ -5,7 +5,7 @@ class Target < ISM::Software
 
         if option("Pass1")
             configureSource([   "--prefix=/usr",
-                                "--build=#{Ism.settings.target}",
+                                "--build=$(support/config.guess)",
                                 "--host=#{Ism.settings.chrootTarget}",
                                 "--without-bash-malloc"],
                                 buildDirectoryPath)
