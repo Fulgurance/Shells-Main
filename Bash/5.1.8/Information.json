@@ -11,8 +11,13 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "Grep",
-      "version": "3.7.0",
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    },
+    {
+      "name": "Readline",
+      "version": "8.1.0",
       "options": []
     }
   ],
