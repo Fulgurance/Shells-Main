@@ -78,13 +78,13 @@ class Target < ISM::Software
         #export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg/}
         #export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
 
-        NORMAL="\[\e[0m\]"
-        RED="\[\e[1;31m\]"
-        GREEN="\[\e[1;32m\]"
+        NORMAL="\\[\\e[0m\\]"
+        RED="\\[\\e[1;31m\\]"
+        GREEN="\\[\\e[1;32m\\]"
         if [[ $EUID == 0 ]] ; then
-        PS1="$RED\u [ $NORMAL\w$RED ]# $NORMAL"
+        PS1="$RED\\u [ $NORMAL\\w$RED ]# $NORMAL"
         else
-        PS1="$GREEN\u [ $NORMAL\w$GREEN ]\$ $NORMAL"
+        PS1="$GREEN\\u [ $NORMAL\\w$GREEN ]\\$ $NORMAL"
         fi
 
         for script in /etc/profile.d/*.sh ; do
@@ -101,13 +101,13 @@ class Target < ISM::Software
         alias ls='ls --color=auto'
         alias grep='grep --color=auto'
 
-        NORMAL="\[\e[0m\]"
-        RED="\[\e[1;31m\]"
-        GREEN="\[\e[1;32m\]"
+        NORMAL="\\[\\e[0m\\]"
+        RED="\\[\\e[1;31m\\]"
+        GREEN="\\[\\e[1;32m\\]"
         if [[ $EUID == 0 ]] ; then
-        PS1="$RED\u [ $NORMAL\w$RED ]# $NORMAL"
+        PS1="$RED\\u [ $NORMAL\\w$RED ]# $NORMAL"
         else
-        PS1="$GREEN\u [ $NORMAL\w$GREEN ]\$ $NORMAL"
+        PS1="$GREEN\\u [ $NORMAL\\w$GREEN ]\\$ $NORMAL"
         fi
 
         unset RED GREEN NORMAL
