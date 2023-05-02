@@ -30,7 +30,7 @@ class Target < ISM::Software
         makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
 
         if !option("Pass1")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc")
+            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d")
 
             profileData = <<-CODE
             pathremove () {
@@ -116,6 +116,22 @@ class Target < ISM::Software
             unset RED GREEN NORMAL
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/bashrc",bashrcData)
+
+            qt5Data = <<-CODE
+            QT5DIR=/usr
+            export QT5DIR
+            pathappend $QT5DIR/bin
+            pathappend /usr/lib/qt5/plugins QT_PLUGIN_PATH
+            pathappend $QT5DIR/lib/plugins QT_PLUGIN_PATH
+            pathappend /usr/lib/qt5/qml QML2_IMPORT_PATH
+            pathappend $QT5DIR/lib/qml QML2_IMPORT_PATH
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}profile.d/qt5.sh",qt5Data)
+
+            kf5Data = <<-CODE
+            export KF5_PREFIX=/usr
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}profile.d/kf5.sh",kf5Data)
         end
     end
 
