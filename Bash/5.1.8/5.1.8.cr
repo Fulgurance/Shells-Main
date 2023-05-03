@@ -126,12 +126,12 @@ class Target < ISM::Software
             pathappend /usr/lib/qt5/qml QML2_IMPORT_PATH
             pathappend $QT5DIR/lib/qml QML2_IMPORT_PATH
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}profile.d/qt5.sh",qt5Data)
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/qt5.sh",qt5Data)
 
             kf5Data = <<-CODE
             export KF5_PREFIX=/usr
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}profile.d/kf5.sh",kf5Data)
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/kf5.sh",kf5Data)
         end
     end
 
