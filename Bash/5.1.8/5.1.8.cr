@@ -31,6 +31,8 @@ class Target < ISM::Software
 
         if !option("Pass1")
             makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d")
+            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/skel/")
+            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}root/")
 
             profileData = <<-CODE
             pathremove () {
