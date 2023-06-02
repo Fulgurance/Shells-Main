@@ -137,6 +137,11 @@ class Target < ISM::Software
             . /etc/profile
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/skel/.bashrc",skelBashrcData)
+
+            rootBashrcData = <<-CODE
+            . /etc/profile
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}root/.bashrc",rootBashrcData)
         end
     end
 
