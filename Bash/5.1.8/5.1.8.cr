@@ -132,6 +132,11 @@ class Target < ISM::Software
             export KF5_PREFIX=/usr
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/kf5.sh",kf5Data)
+
+            skelBashrcData = <<-CODE
+            . /etc/profile
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/skel/.bashrc",skelBashrcData)
         end
     end
 
