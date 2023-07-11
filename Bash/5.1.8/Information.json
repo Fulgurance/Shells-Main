@@ -2,7 +2,9 @@
   "port": "Shells-Main",
   "name": "Bash",
   "version": "5.1.8",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "The GNU Bourne Again SHell",
   "website": "https://www.gnu.org/software/bash/",
   "installedFiles": [],
@@ -23,9 +25,12 @@
         {
           "name": "Ncurses",
           "version": "6.2.0",
-          "options": ["Pass1"]
+          "options": [
+            "Pass1"
+          ]
         }
-      ]
+      ],
+      "kernelDependencies": []
     }
   ]
 }
