@@ -145,13 +145,9 @@ class Target < ISM::Software
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}root/.bashrc",rootBashrcData)
         end
-    end
-
-    def install
-        super
 
         if option("Pass1")
-            makeLink("bash","#{Ism.settings.rootPath}bin/sh",:symbolicLink)
+            makeLink("bash","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}bin/sh",:symbolicLink)
         end
     end
 
