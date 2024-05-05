@@ -147,7 +147,7 @@ class Target < ISM::Software
         end
 
         if option("Pass1")
-            makeLink("bash","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}bin/sh",:symbolicLink)
+            makeLink("bash","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/sh",:symbolicLink)
         end
     end
 
