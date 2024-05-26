@@ -2,16 +2,15 @@
   "port": "Shells-Main",
   "name": "Bash",
   "version": "5.2.15",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "The GNU Bourne Again SHell",
   "website": "https://www.gnu.org/software/bash/",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "BaseLibraries-Main",
       "name": "Readline",
-      "version": "8.2.0",
+      "version": ">=8.2.0",
       "options": []
     }
   ],
@@ -23,11 +22,10 @@
       "active": false,
       "dependencies": [
         {
+          "port": "BaseLibraries-Main",
           "name": "Ncurses",
-          "version": "6.4.0",
-          "options": [
-            "Pass1"
-          ]
+          "version": ">=6.4.0",
+          "options": ["Pass1"]
         }
       ],
       "kernelDependencies": []
