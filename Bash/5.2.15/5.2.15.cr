@@ -144,6 +144,12 @@ class Target < ISM::Software
             . /etc/profile
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}root/.bashrc",rootBashrcData)
+
+            shellData = <<-CODE
+            /bin/sh
+            /bin/bash
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/shells",shellData)
         end
 
         if option("Pass1")
