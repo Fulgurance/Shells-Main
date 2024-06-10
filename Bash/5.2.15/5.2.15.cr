@@ -30,9 +30,9 @@ class Target < ISM::Software
         makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
 
         if !option("Pass1")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/skel/")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}root/")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/skel/")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}root/")
 
             profileData = <<-CODE
             pathremove () {
@@ -100,7 +100,7 @@ class Target < ISM::Software
 
             unset script RED GREEN NORMAL
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile",profileData)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile",profileData)
 
             bashrcData = <<-CODE
             alias ls='ls --color=auto'
@@ -117,7 +117,7 @@ class Target < ISM::Software
 
             unset RED GREEN NORMAL
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/bashrc",bashrcData)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/bashrc",bashrcData)
 
             qt5Data = <<-CODE
             QT5DIR=/usr
@@ -128,32 +128,32 @@ class Target < ISM::Software
             pathappend /usr/lib/qt5/qml QML2_IMPORT_PATH
             pathappend $QT5DIR/lib/qml QML2_IMPORT_PATH
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/qt5.sh",qt5Data)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/qt5.sh",qt5Data)
 
             kf5Data = <<-CODE
             export KF5_PREFIX=/usr
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/profile.d/kf5.sh",kf5Data)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/kf5.sh",kf5Data)
 
             skelBashrcData = <<-CODE
             . /etc/profile
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/skel/.bashrc",skelBashrcData)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/skel/.bashrc",skelBashrcData)
 
             rootBashrcData = <<-CODE
             . /etc/profile
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}root/.bashrc",rootBashrcData)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}root/.bashrc",rootBashrcData)
 
             shellData = <<-CODE
             /bin/sh
             /bin/bash
             CODE
-            fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/shells",shellData)
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/shells",shellData)
         end
 
         if option("Pass1")
-            makeLink("bash","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/bin/sh",:symbolicLink)
+            makeLink("bash","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/sh",:symbolicLink)
         end
     end
 
