@@ -4,17 +4,17 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            configureSource([   "--prefix=/usr",
-                                "--build=$(support/config.guess)",
-                                "--host=#{Ism.settings.chrootTarget}",
-                                "--without-bash-malloc"],
-                                buildDirectoryPath)
+            configureSource(arguments:  "--prefix=/usr                          \
+                                        --build=$(support/config.guess)         \
+                                        --host=#{Ism.settings.chrootTarget}     \
+                                        --without-bash-malloc",
+                        path:           buildDirectoryPath)
         else
-            configureSource([   "--prefix=/usr",
-                                "--docdir=/usr/share/doc/bash-5.2.15",
-                                "--without-bash-malloc",
-                                "--with-installed-readline"],
-                                buildDirectoryPath)
+            configureSource(arguments:  "--prefix=/usr                      \
+                                        --docdir=/usr/share/doc/bash-5.2.15 \
+                                        --without-bash-malloc               \
+                                        --with-installed-readline",
+                            path:       buildDirectoryPath)
         end
     end
     
@@ -27,7 +27,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
 
         if !option("Pass1")
             makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d")
@@ -79,9 +80,9 @@ class Target < ISM::Software
             export HISTSIZE=1000
             export HISTIGNORE="&:[bf]g:exit"
 
-            #export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share/}
-            #export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg/}
-            #export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
+            export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share/}
+            export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg/}
+            export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
 
             NORMAL="\\[\\e[0m\\]"
             RED="\\[\\e[1;31m\\]"
@@ -153,7 +154,9 @@ class Target < ISM::Software
         end
 
         if option("Pass1")
-            makeLink("bash","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/sh",:symbolicLink)
+            makeLink(   target: "bash",
+                        path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/bin/sh",
+                        type:   :symbolicLink)
         end
     end
 
