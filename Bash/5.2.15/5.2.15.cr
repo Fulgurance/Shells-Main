@@ -294,6 +294,11 @@ class Target < ISM::Software
             "\\e[F": end-of-line
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/inputrc",inputrcData)
+
+            issueData = <<-CODE
+            \n (\s \m \r) \t
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/issue",issueData)
         end
 
         if option("Pass1")
