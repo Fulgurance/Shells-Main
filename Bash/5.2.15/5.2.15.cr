@@ -296,7 +296,7 @@ class Target < ISM::Software
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/inputrc",inputrcData)
 
             issueData = <<-CODE
-            \n (\s \m \r) \t
+            \\n (\\s \\m \\r) \\t
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/issue",issueData)
         end
