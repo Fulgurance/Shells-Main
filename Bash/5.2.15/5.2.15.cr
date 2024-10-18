@@ -84,14 +84,7 @@ class Target < ISM::Software
             export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg/}
             export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
 
-            NORMAL="\\[\\e[0m\\]"
-            RED="\\[\\e[1;31m\\]"
-            GREEN="\\[\\e[1;32m\\]"
-            if [[ $EUID == 0 ]] ; then
-            PS1="$RED\\u [ $NORMAL\\w$RED ]# $NORMAL"
-            else
-            PS1="$GREEN\\u [ $NORMAL\\w$GREEN ]\\$ $NORMAL"
-            fi
+            PS1='\\[\\e[1m\\]\\$\\[\\e[0m\\] \\[\\e[38;5;129;1m\\]\\H\\[\\e[39m\\]|\\[\\e[38;5;203m\\]\\u\\[\\e[0m\\] \\[\\e[38;5;214m\\]${PWD}\\[\\e[0m\\] \\n\\[\\e[38;5;82;1m\\]>\\[\\e[38;5;82m\\]_\\[\\e[0m\\] '
 
             for script in /etc/profile.d/*.sh ; do
                     if [ -r $script ] ; then
@@ -99,7 +92,7 @@ class Target < ISM::Software
                     fi
             done
 
-            unset script RED GREEN NORMAL
+            unset script
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile",profileData)
 
@@ -111,11 +104,7 @@ class Target < ISM::Software
             RED="\\[\\e[1;31m\\]"
             GREEN="\\[\\e[1;32m\\]"
 
-            if [[ $EUID == 0 ]] ; then
-                PS1="$RED\\u [ $NORMAL\\w$RED ]# $NORMAL"
-            else
-                PS1="$GREEN\\u [ $NORMAL\\w$GREEN ]\\$ $NORMAL"
-            fi
+            PS1='\\[\\e[1m\\]\\$\\[\\e[0m\\] \\[\\e[38;5;129;1m\\]\\H\\[\\e[39m\\]|\\[\\e[38;5;203m\\]\\u\\[\\e[0m\\] \\[\\e[38;5;214m\\]${PWD}\\[\\e[0m\\] \\n\\[\\e[38;5;82;1m\\]>\\[\\e[38;5;82m\\]_\\[\\e[0m\\] '
 
             unset RED GREEN NORMAL
             CODE
