@@ -218,7 +218,10 @@ class Target < ISM::Software
             #export LANG=<ll>_<CC>.<charmap><@modifiers>
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/skel/.bashrc",skelBashrcData)
-            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}root/.bashrc",skelBashrcData)
+
+            if !File.exists?("#{Ism.settings.rootPath}root/.bashrc")
+                fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}root/.bashrc",skelBashrcData)
+            end
 
             skelBashProfileData = <<-CODE
             if [ -f "$HOME/.bashrc" ] ; then
