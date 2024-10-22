@@ -194,22 +194,6 @@ class Target < ISM::Software
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/i18n.sh",i18nData)
 
-            qt5Data = <<-CODE
-            QT5DIR=/usr
-            export QT5DIR
-            pathappend $QT5DIR/bin
-            pathappend /usr/lib/qt5/plugins QT_PLUGIN_PATH
-            pathappend $QT5DIR/lib/plugins QT_PLUGIN_PATH
-            pathappend /usr/lib/qt5/qml QML2_IMPORT_PATH
-            pathappend $QT5DIR/lib/qml QML2_IMPORT_PATH
-            CODE
-            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/qt5.sh",qt5Data)
-
-            kf5Data = <<-CODE
-            export KF5_PREFIX=/usr
-            CODE
-            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile.d/kf5.sh",kf5Data)
-
             skelBashrcData = <<-CODE
             if [ -f "/etc/bashrc" ] ; then
                 source /etc/bashrc
