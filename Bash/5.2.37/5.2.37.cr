@@ -7,12 +7,14 @@ class Target < ISM::Software
             configureSource(arguments:  "--prefix=/usr                          \
                                         --build=$(support/config.guess)         \
                                         --host=#{Ism.settings.chrootTarget}     \
+                                        bash_cv_strtold_broken=no               \
                                         --without-bash-malloc",
                         path:           buildDirectoryPath)
         else
             configureSource(arguments:  "--prefix=/usr                          \
                                         --docdir=/usr/share/doc/#{versionName}  \
                                         --without-bash-malloc                   \
+                                        bash_cv_strtold_broken=no               \
                                         --with-installed-readline",
                             path:       buildDirectoryPath)
         end

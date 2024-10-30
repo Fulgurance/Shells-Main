@@ -1,0 +1,38 @@
+{
+  "port": "Shells-Main",
+  "name": "Bash",
+  "version": "5.2.37",
+  "architectures": ["x86_64"],
+  "description": "The GNU Bourne Again SHell",
+  "website": "https://www.gnu.org/software/bash/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Readline",
+      "version": ">=8.2.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Pass1",
+      "description": "Enable the phase 1 of the cross toolchain building",
+      "active": false,
+      "dependencies": [
+        {
+          "port": "BaseLibraries-Main",
+          "name": "Ncurses",
+          "version": ">=6.4.0",
+          "options": ["Pass1"]
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
