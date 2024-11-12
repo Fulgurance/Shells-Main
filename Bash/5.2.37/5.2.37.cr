@@ -86,6 +86,8 @@ class Target < ISM::Software
             export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg/}
             export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
 
+            export CRYSTAL_WORKERS=${nproc}
+
             PS1='\\[\\e[1m\\]\\$\\[\\e[0m\\] \\[\\e[38;5;129;1m\\]\\H\\[\\e[39m\\]|\\[\\e[38;5;203m\\]\\u\\[\\e[0m\\] \\[\\e[38;5;214m\\]${PWD}\\[\\e[0m\\] \\n\\[\\e[38;5;82;1m\\]>\\[\\e[38;5;82m\\]_\\[\\e[0m\\] '
 
             for script in /etc/profile.d/*.sh ; do
