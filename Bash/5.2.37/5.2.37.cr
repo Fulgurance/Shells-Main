@@ -110,6 +110,16 @@ class Target < ISM::Software
 
             PS1='\\[\\e[1m\\]\\$\\[\\e[0m\\] \\[\\e[38;5;129;1m\\]\\H\\[\\e[39m\\]|\\[\\e[38;5;203m\\]\\u\\[\\e[0m\\] \\[\\e[38;5;214m\\]${PWD}\\[\\e[0m\\] \\n\\[\\e[38;5;82;1m\\]>\\[\\e[38;5;82m\\]_\\[\\e[0m\\] '
 
+            for i in $(locale); do
+                unset ${i%=*}
+            done
+
+            if [[ "$TERM" = linux ]]; then
+                export LANG=C.UTF-8
+            else
+            #    export LANG=<ll>_<CC>.<charmap><@modifiers>
+            fi
+
             unset RED GREEN NORMAL
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/bashrc",bashrcData)
