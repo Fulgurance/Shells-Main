@@ -116,7 +116,7 @@ class Target < ISM::Software
 
             if [[ "$TERM" = linux ]]; then
                 export LANG=C.UTF-8
-            else
+            #else
             #    export LANG=<ll>_<CC>.<charmap><@modifiers>
             fi
 
