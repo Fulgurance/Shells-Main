@@ -114,12 +114,6 @@ class Target < ISM::Software
                 unset ${i%=*}
             done
 
-            if [[ "$TERM" = linux ]]; then
-                export LANG=C.UTF-8
-            #else
-            #    export LANG=<ll>_<CC>.<charmap><@modifiers>
-            fi
-
             unset RED GREEN NORMAL
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/bashrc",bashrcData)
