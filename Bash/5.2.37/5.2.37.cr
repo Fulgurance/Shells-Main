@@ -96,6 +96,12 @@ class Target < ISM::Software
                     fi
             done
 
+            for i in $(locale); do
+                unset ${i%=*}
+            done
+
+            export LC_ALL=C.UTF-8
+
             unset script
             CODE
             fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/profile",profileData)
