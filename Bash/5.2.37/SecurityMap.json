@@ -1,0 +1,10 @@
+{
+  "descriptors": [
+    {
+      "target": "Default",
+      "user":   "root",
+      "group":  "root",
+      "mode":   "0755"
+    }
+  ]
+}
