@@ -5,6 +5,12 @@
       "user":   "root",
       "group":  "root",
       "mode":   "0755"
+    },
+    {
+      "target": "/etc/profile.d",
+      "user":   "root",
+      "group":  "root",
+      "mode":   "0755"
     }
   ]
 }
