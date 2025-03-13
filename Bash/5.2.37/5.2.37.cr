@@ -298,7 +298,7 @@ class Target < ISM::Software
         end
     end
 
-    def install
+    def deploy
         super
 
         if !option("Pass1")
