@@ -6,8 +6,7 @@
       "fileMode":       "0644",
       "directoryUser":  "root",
       "directoryGroup": "root",
-      "directoryMode":  "0755",
-
+      "directoryMode":  "0755"
   },
   "descriptors": []
 }
