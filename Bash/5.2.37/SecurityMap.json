@@ -9,5 +9,12 @@
       "directoryMode":  "0755",
 
   },
-  "descriptors": []
+  "descriptors": [
+    {
+      "target": "/etc/profile.d",
+      "user":   "root",
+      "group":  "root",
+      "mode":   "0755"
+    }
+  ]
 }
