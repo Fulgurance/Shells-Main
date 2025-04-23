@@ -12,6 +12,12 @@
       "name": "Readline",
       "version": ">=8.2.0",
       "options": []
+    },
+    {
+      "port": "LanguageComponents-Main",
+      "name": "Default",
+      "version": ">=0.1.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
