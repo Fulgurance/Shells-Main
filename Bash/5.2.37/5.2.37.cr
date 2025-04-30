@@ -12,9 +12,6 @@ class Target < ISM::Software
                         path:           buildDirectoryPath)
         else
             configureSource(arguments:  "--prefix=/usr                          \
-                                        --host=#{Ism.settings.systemTarget}     \
-                                        --build=#{Ism.settings.systemTarget}    \
-                                        --target=#{Ism.settings.systemTarget}   \
                                         --docdir=/usr/share/doc/#{versionName}  \
                                         --without-bash-malloc                   \
                                         bash_cv_strtold_broken=no               \
