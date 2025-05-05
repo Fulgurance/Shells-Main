@@ -5,7 +5,7 @@ class Target < ISM::Software
 
         if option("Pass1")
             configureSource(arguments:  "--prefix=/usr                                                  \
-                                        --build=#{Ism.settings.systemTarget(relatedToChroot: false)}    \
+                                        --build=$(sh support/config.guess)                              \
                                         --host=#{Ism.settings.chrootTarget}                             \
                                         bash_cv_strtold_broken=no                                       \
                                         --without-bash-malloc",
