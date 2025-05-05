@@ -4,10 +4,10 @@ class Target < ISM::Software
         super
 
         if option("Pass1")
-            configureSource(arguments:  "--prefix=/usr                          \
-                                        --build=$(sh support/config.guess)      \
-                                        --host=#{Ism.settings.chrootTarget}     \
-                                        bash_cv_strtold_broken=no               \
+            configureSource(arguments:  "--prefix=/usr                                                  \
+                                        --build=#{Ism.settings.systemTarget(relatedToChroot: false)}    \
+                                        --host=#{Ism.settings.chrootTarget}                             \
+                                        bash_cv_strtold_broken=no                                       \
                                         --without-bash-malloc",
                         path:           buildDirectoryPath)
         else
