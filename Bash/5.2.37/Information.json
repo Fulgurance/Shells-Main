@@ -8,9 +8,51 @@
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "ProgrammingTools-Main",
+      "name": "Binutils",
+      "version": ">=2.43.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Bison",
+      "version": ">=3.8.2",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Gcc",
+      "version": ">=14.2.0",
+      "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Glibc",
+      "version": ">=2.40.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Grep",
+      "version": ">=3.11.0",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Ncurses",
+      "version": ">=6.5.0",
+      "options": []
+    },
+    {
       "port": "BaseLibraries-Main",
       "name": "Readline",
       "version": ">=8.2.0",
+      "options": []
+    },
+    {
+      "port": "Utilities-Main",
+      "name": "Sed",
+      "version": ">=4.9.0",
       "options": []
     },
     {
