@@ -54,12 +54,6 @@
       "name": "Sed",
       "version": ">=4.9.0",
       "options": []
-    },
-    {
-      "port": "LanguageComponents-Main",
-      "name": "Default",
-      "version": ">=0.1.0",
-      "options": []
     }
   ],
   "kernelDependencies": [],
