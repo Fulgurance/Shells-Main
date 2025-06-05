@@ -305,8 +305,10 @@ class Target < ISM::Software
             runDircolorsCommand("-p > /etc/dircolors")
         end
 
-        runChownCommand("root:root /etc/profile.d")
-        runChmodCommand("0755 /etc/profile.d")
+        if !passEnabled
+            runChownCommand("root:root /etc/profile.d")
+            runChmodCommand("0755 /etc/profile.d")
+        end
     end
 
 end
