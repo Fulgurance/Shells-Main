@@ -26,9 +26,9 @@
       "options": []
     },
     {
-      "port": "ProgrammingTools-Main",
-      "name": "Glibc",
-      "version": ">=2.40.0",
+      "port": "Components-Main",
+      "name": "C-Library:CHOICE",
+      "version": ">=0.2.0",
       "options": []
     },
     {
