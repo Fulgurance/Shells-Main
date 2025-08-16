@@ -27,7 +27,7 @@
     },
     {
       "port": "Components-Main",
-      "name": "C-Library:CHOICE",
+      "name": "C-Library",
       "version": ">=0.2.0",
       "options": []
     },
