@@ -1,0 +1,33 @@
+PORT
+    Shells-Main
+NAME
+    Bash
+VERSION
+    5.2.37
+ARCHITECTURES
+    x86_64
+DESCRIPTION
+    The GNU Bourne Again SHell
+WEBSITE
+    https://www.gnu.org/software/bash/
+DEPENDENCIES
+        @ProgrammingTools-Main:Binutils>=2.43.0
+        @ProgrammingTools-Main:Bison>=3.8.2
+        @ProgrammingTools-Main:Gcc>=14.2.0
+        @Components-Main:C-Library>=0.2.0
+        @Utilities-Main:Grep>=3.11.0
+        @BaseLibraries-Main:Ncurses>=6.5.0
+        @BaseLibraries-Main:Readline>=8.2.0
+        @Utilities-Main:Sed>=4.9.0
+KERNELDEPENDENCIES
+OPTIONS
+    name: Pass1
+    description: Enable the phase 1 of the cross toolchain building
+    active: false
+    dependencies:
+        @BaseLibraries-Main:Ncurses>=6.4.0(Pass1)
+    kernelDependencies:
+
+UNIQUEDEPENDENCIES
+UNIQUEOPTIONS
+ALLOWCODEPENDENCIES
